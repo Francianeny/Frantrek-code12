@@ -1,58 +1,32 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<div class="container py-5">
-    <h1 class="text-center mb-4">About FranTrek</h1>
+<h1>Contact Us</h1>
 
-    <p class="lead text-center mb-5">
-        FranTrek is dedicated to teaching programming in a simple and intuitive way. Meet the founders:
-    </p>
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            <div class="alert alert-{{ category }}">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
 
-    <!-- Button to show/hide the form -->
-    <button class="btn btn-primary mb-4" onclick="toggleForm('about-form')">Show/Hide Form</button>
+<form action="/contact" method="POST">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
 
-    <!-- Hidden form -->
-    <div id="about-form" style="display:none;">
-        <h2>About Form</h2>
-        <form action="/about" method="POST">
-            <label for="about-info">Information:</label>
-            <input type="text" id="about-info" name="about-info" required class="form-control">
-            <input type="submit" value="Submit" class="btn btn-success mt-3">
-        </form>
-    </div>
+    <label for="email">Email Address:</label>
+    <input type="email" id="email" name="email" required>
 
-    <!-- Profiles Section -->
-    <div class="row mt-5">
-        <!-- Card for Tarek -->
-        <div class="col-md-6">
-            <div class="card mb-4">
-                <img src="{{ url_for('static', filename='images/tarek.jpg') }}" class="card-img-top" alt="Tarek">
-                <div class="card-body">
-                    <h5 class="card-title">Tarek Zainaldin</h5>
-                    <p class="card-text">Tarek is one of the co-founders of FranTrek, passionate about coding and making education accessible.</p>
-                    <a href="{{ url_for('tarek_details') }}" class="btn btn-primary">Learn More About Tarek</a>
-                </div>
-            </div>
-        </div>
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" name="phone">
 
-        <!-- Card for Francia -->
-        <div class="col-md-6">
-            <div class="card mb-4">
-                <img src="{{ url_for('static', filename='images/francia.jpg') }}" class="card-img-top" alt="Francia">
-                <div class="card-body">
-                    <h5 class="card-title">Francia Ramarolahy</h5>
-                    <p class="card-text">Francia is a co-founder with a love for making technology accessible and intuitive for all learners.</p>
-                    <a href="{{ url_for('francia_details') }}" class="btn btn-primary">Learn More About Francia</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+    <label for="subject">Subject:</label>
+    <input type="text" id="subject" name="subject" required>
 
-<script>
-    function toggleForm(formId) {
-        const form = document.getElementById(formId);
-        form.style.display = form.style.display === 'block' ? 'none' : 'block';
-    }
-</script>
-{% endblock content %}
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" required></textarea>
+
+    <button type="submit">Send</button>
+</form>
+{% endblock %}

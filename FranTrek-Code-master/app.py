@@ -21,6 +21,23 @@ def tarek_page():
 def francia_page():
     return render_template('francia.html')
 
-# Run the Flask app
+@app.route('/contact', methods=['GET', 'POST'])
+def contact():
+    if request.method == 'POST':
+        name = request.form.get('name')
+        email = request.form.get('email')
+        phone = request.form.get('phone')
+        subject = request.form.get('subject')
+        message = request.form.get('message')
+
+        # Process the data (e.g., save to database, send email, etc.)
+
+        # Flash a success message
+        flash('Your message has been sent successfully!', 'success')
+        return redirect(url_for('contact'))  # Redirect to the contact page (GET request)
+
+    # Render the contact page with the form
+    return render_template('contact.html')  # Make sure to create this template
+
 if __name__ == "__main__":
     app.run(debug=True, port=4001)
