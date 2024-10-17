@@ -1,17 +1,17 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<h1>À Propos de FranTrek</h1>
+<h1>Contactez-Nous</h1>
 
 <!-- Bouton pour afficher/masquer le formulaire -->
-<button onclick="toggleForm('about-form')">Afficher/Masquer Formulaire</button>
+<button onclick="toggleForm('contact-form')">Afficher/Masquer Formulaire</button>
 
 <!-- Formulaire caché -->
-<div id="about-form" style="display:none;">
-    <h2>Formulaire À Propos</h2>
-    <form action="/about" method="POST">
-        <label for="about-info">Informations :</label>
-        <input type="text" id="about-info" name="about-info" required>
+<div id="contact-form" style="display:none;">
+    <h2>Formulaire de Contact</h2>
+    <form action="/contact" method="POST">
+        <label for="contact-info">Votre message :</label>
+        <input type="text" id="contact-info" name="contact-info" required>
         <input type="submit" value="Envoyer">
     </form>
 </div>
