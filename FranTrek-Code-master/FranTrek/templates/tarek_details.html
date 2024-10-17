@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container py-5">
+    <h1 class="text-center mb-4">Tarek Zainaldin</h1>
+
+    <div class="row">
+        <div class="col-md-6">
+            <img src="{{ url_for('static', filename='images/tarek.jpg') }}" class="img-fluid rounded" alt="Tarek">
+        </div>
+        <div class="col-md-6">
+            <p class="lead">
+                Tarek is a co-founder of FranTrek and a passionate software developer with over 10 years of experience.
+                He specializes in Python and web development, and enjoys simplifying complex concepts for learners.
+            </p>
+            <p>
+                He believes that education is the key to unlocking opportunities, and he is committed to making coding
+                accessible to everyone.
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock content %}

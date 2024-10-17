@@ -1,19 +1,52 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<h1>Contactez-Nous</h1>
+<div class="container py-5">
+    <h1 class="text-center mb-4">About FranTrek</h1>
 
-<!-- Bouton pour afficher/masquer le formulaire -->
-<button onclick="toggleForm('contact-form')">Afficher/Masquer Formulaire</button>
+    <p class="lead text-center mb-5">
+        FranTrek is dedicated to teaching programming in a simple and intuitive way. Meet the founders:
+    </p>
 
-<!-- Formulaire caché -->
-<div id="contact-form" style="display:none;">
-    <h2>Formulaire de Contact</h2>
-    <form action="/contact" method="POST">
-        <label for="contact-info">Votre message :</label>
-        <input type="text" id="contact-info" name="contact-info" required>
-        <input type="submit" value="Envoyer">
-    </form>
+    <!-- Button to show/hide the form -->
+    <button class="btn btn-primary mb-4" onclick="toggleForm('about-form')">Show/Hide Form</button>
+
+    <!-- Hidden form -->
+    <div id="about-form" style="display:none;">
+        <h2>About Form</h2>
+        <form action="/about" method="POST">
+            <label for="about-info">Information:</label>
+            <input type="text" id="about-info" name="about-info" required class="form-control">
+            <input type="submit" value="Submit" class="btn btn-success mt-3">
+        </form>
+    </div>
+
+    <!-- Profiles Section -->
+    <div class="row mt-5">
+        <!-- Card for Tarek -->
+        <div class="col-md-6">
+            <div class="card mb-4">
+                <img src="{{ url_for('static', filename='images/tarek.jpg') }}" class="card-img-top" alt="Tarek">
+                <div class="card-body">
+                    <h5 class="card-title">Tarek Zainaldin</h5>
+                    <p class="card-text">Tarek is one of the co-founders of FranTrek, passionate about coding and making education accessible.</p>
+                    <a href="{{ url_for('tarek_details') }}" class="btn btn-primary">Learn More About Tarek</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card for Francia -->
+        <div class="col-md-6">
+            <div class="card mb-4">
+                <img src="{{ url_for('static', filename='images/francia.jpg') }}" class="card-img-top" alt="Francia">
+                <div class="card-body">
+                    <h5 class="card-title">Francia Ramarolahy</h5>
+                    <p class="card-text">Francia is a co-founder with a love for making technology accessible and intuitive for all learners.</p>
+                    <a href="{{ url_for('francia_details') }}" class="btn btn-primary">Learn More About Francia</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <script>

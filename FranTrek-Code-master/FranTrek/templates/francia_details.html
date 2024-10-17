@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container py-5">
+    <h1 class="text-center mb-4">Francia Ramarolahy</h1>
+
+    <div class="row">
+        <div class="col-md-6">
+            <img src="{{ url_for('static', filename='images/francia.jpg') }}" class="img-fluid rounded" alt="Francia">
+        </div>
+        <div class="col-md-6">
+            <p class="lead">
+                Francia is a co-founder of FranTrek with a strong passion for making technology education accessible to all.
+                With a background in computer science, she focuses on creating intuitive learning experiences.
+            </p>
+            <p>
+                Francia believes in the power of education to change lives, and she works to ensure that everyone can
+                benefit from learning programming in an engaging and practical way.
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock content %}

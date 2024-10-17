@@ -3,23 +3,20 @@
 {% block content %}
 <h1>About FranTrek</h1>
 
-<!-- Button to show/hide the form -->
-<button onclick="toggleForm('about-form')">Show/Hide Form</button>
+<div class="container">
+    <!-- Section for Tarek -->
+    <div class="person-card">
+        <h2>Tarek</h2>
+        <p>Tarek is one of the key developers behind FranTrek. He is skilled in full-stack web development...</p>
+        <a href="{{ url_for('tarek_page') }}" class="btn btn-primary">Learn more about Tarek</a>
+    </div>
 
-<!-- Hidden form -->
-<div id="about-form" style="display:none;">
-    <h2>About Form</h2>
-    <form action="/about" method="POST">
-        <label for="about-info">Information:</label>
-        <input type="text" id="about-info" name="about-info" required>
-        <input type="submit" value="Submit">
-    </form>
+    <!-- Section for Francia -->
+    <div class="person-card">
+        <h2>Francia</h2>
+        <p>Francia is a software engineer with expertise in front-end technologies and user experience...</p>
+        <a href="{{ url_for('francia_page') }}" class="btn btn-primary">Learn more about Francia</a>
+    </div>
 </div>
 
-<script>
-    function toggleForm(formId) {
-        const form = document.getElementById(formId);
-        form.style.display = form.style.display === 'block' ? 'none' : 'block';
-    }
-</script>
 {% endblock content %}
