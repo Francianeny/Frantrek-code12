@@ -1,7 +1,7 @@
 from flask import Flask, render_template, url_for ,flash,redirect
 from datetime import datetime
 from flask_sqlalchemy import SQLAlchemy 
-from form import RegistrationForm, LoginForm
+from forms import RegistrationForm, LoginForm
 from models import User, Lesson, Course
 app = Flask(__name__)
 app.config[
@@ -123,7 +123,22 @@ if __name__ == "__main__":
     #   with app.app_context():  # Make sure to create an app context
     #    db.create_all()  
  app.run(debug=True) 
-
 #  A123!!@aa
-# T123!!@tt
-# F123!!@ff
+# TT123!!@tt
+# F123!!@ff 
+# cbpr tqgr ptwg siak
+# zisk luzl baod yqae
+
+
+
+# frantrek code 
+# xslb okdn wktc dvkd
+
+
+# Francode busnis
+# adhc wznv tmpg mgdt
+
+
+
+# flaskapp
+# bfjg bwzs ujco ebzj
