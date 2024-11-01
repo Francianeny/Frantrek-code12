@@ -29,7 +29,7 @@ end
 # unset irrelevant variables
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/home/tarek/FranTrek-Code-14/venv"
+set -gx VIRTUAL_ENV "/home/francianeny/Frantrek-code12-5/FranTrek-Code-master/venv"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH
