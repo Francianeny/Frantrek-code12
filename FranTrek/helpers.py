@@ -1,5 +1,5 @@
 import secrets
-import os 
+import os
 from PIL import Image
 from flask import current_app
 
