@@ -1,9 +1,10 @@
 # import secrets
 # from PIL import Image
 # import os
+# from flask import Blueprint, render_template
 # from FranTrek.models import User, Lesson, Course
 # from flask_ckeditor import upload_success, upload_fail
-# from flask_mail import Message 
+# from flask_mail import Message
 # from flask import render_template, url_for, flash, redirect, request, session, abort, send_from_directory
 # from FranTrek.forms import (
 #     NewCourseForm,
